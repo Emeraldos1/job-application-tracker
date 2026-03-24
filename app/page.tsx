@@ -15,56 +15,47 @@ export default function Home() {
       <MainAppBar />
       <main
         style={{
-          height: "calc(100vh - 64px)",
+          minHeight: "calc(100dvh - 64px)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          padding: "1rem",
         }}
       >
         <Card
           sx={{
-            width: "65%",
-            height: "25%",
+            width: { xs: "95%", sm: "75%", md: "65%" },
             bgcolor: "background.paper",
             borderRadius: 3,
             boxShadow: 6,
           }}
         >
-          <Stack direction="column" sx={{ height: "100%" }}>
-            <CardContent>
-              <Typography variant="h5" component="h2" align="left" color="text.primary">
+          <CardContent>
+            <Stack direction="column" spacing={2}>
+              <Typography variant="h5" component="h2" color="text.primary">
                 Welcome to the Job Application Tracker!
               </Typography>
-            </CardContent>
-            <CardContent>
-              <Typography variant="body1" align="left" color="text.secondary">
+              <Typography variant="body1" color="text.secondary">
                 This application helps you efficiently track your job
                 applications. You can add new applications, update their status,
                 and keep all your job search information organized in one place.
               </Typography>
-            </CardContent>
-            <CardContent sx={{ width: "100%" }}>
-              <Typography variant="h5" component="h3" align="center" color="text.primary">
-                Please login
-              </Typography>
-            </CardContent>
-            <Stack
-              direction="column"
-              alignItems="center"
-              spacing={1}
-              sx={{ width: "100%" }}
-            >
-              <Button variant="contained" color="primary">
-                Login
-              </Button>
-              <Typography variant="body2" color="text.secondary">
-                Don&apos;t have an account?{" "}
-                <Link href="#" color="primary.light">
-                  Sign up
-                </Link>
-              </Typography>
+              <Stack direction="column" alignItems="center" spacing={1} sx={{ pt: 1 }}>
+                <Typography variant="h5" component="h3" color="text.primary">
+                  Please login
+                </Typography>
+                <Button variant="contained" color="primary">
+                  Login
+                </Button>
+                <Typography variant="body2" color="text.secondary">
+                  Don&apos;t have an account?{" "}
+                  <Link href="#" color="primary.light">
+                    Sign up
+                  </Link>
+                </Typography>
+              </Stack>
             </Stack>
-          </Stack>
+          </CardContent>
         </Card>
       </main>
     </Box>

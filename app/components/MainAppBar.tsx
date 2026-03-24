@@ -36,11 +36,13 @@ export default function MainAppBar() {
       >
         <Typography
           variant="h1"
+          noWrap
           sx={{
-            fontSize: "1.5rem",
+            fontSize: { xs: "1rem", sm: "1.5rem" },
             position: "absolute",
             left: "50%",
             transform: "translateX(-50%)",
+            maxWidth: "60%",
           }}
         >
           Job Application Tracker
