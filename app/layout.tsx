@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import { ThemeProvider } from "@mui/material/styles";
+import { Poppins } from "next/font/google";
+import theme from "./theme";
 import "./globals.css";
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-poppins" });
 
 export const metadata: Metadata = {
   title: "Job Application Tracker",
@@ -13,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={poppins.variable}>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
