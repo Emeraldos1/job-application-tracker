@@ -1,24 +1,17 @@
 "use client";
 
 import { AccountCircle } from "@mui/icons-material";
-import {
-  AppBar,
-  IconButton,
-  Menu,
-  MenuItem,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { AppBar, IconButton, Menu, MenuItem, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
-
-//type Props = {};
 
 export default function MainAppBar() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -28,8 +21,6 @@ export default function MainAppBar() {
       <Stack
         direction="row"
         alignItems="center"
-        justifyContent="flex-end"
-        position="relative"
         px={2}
         paddingTop={"0.5rem"}
         paddingBottom={"0.5rem"}
@@ -39,10 +30,8 @@ export default function MainAppBar() {
           noWrap
           sx={{
             fontSize: { xs: "1rem", sm: "1.5rem" },
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-            maxWidth: "60%",
+            flexGrow: 1,
+            textAlign: "center",
           }}
         >
           Job Application Tracker
